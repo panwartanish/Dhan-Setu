@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhan Setu - Financial Literacy Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#FFF8E7',
+                100: '#FFEDC4',
+                200: '#FFE09D',
+                300: '#FFD376',
+                400: '#FFC659',
+                500: '#D4A574',
+                600: '#B8884F',
+                700: '#8B7355',
+                800: '#6B5643',
+                900: '#3E2723'
+              },
+              accent: {
+                green: '#66BB6A',
+                amber: '#FFB74D',
+                blue: '#42A5F5',
+                red: '#E57373'
+              },
+              background: {
+                cream: '#FFF8E7',
+                light: '#FFFBF0'
+              },
+              gray: {
+                100: '#f3f4f6',
+                200: '#e5e7eb',
+                300: '#d1d5db',
+                400: '#9ca3af',
+                500: '#6b7280',
+                600: '#4b5563',
+                700: '#374151',
+                800: '#1f2937',
+                900: '#111827',
+              }
+            },
+            fontFamily: {
+              sans: ['Noto Sans', 'system-ui', 'sans-serif'],
+              hindi: ['Noto Sans Devanagari', 'Noto Sans', 'sans-serif']
+            },
+            fontSize: {
+              'money': ['2.5rem', { lineHeight: '1', fontWeight: '700' }],
+              'dialogue': ['1.125rem', { lineHeight: '1.6' }]
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+              'slide-up': 'slideUp 0.5s ease-out',
+              'scale-in': 'scaleIn 0.3s ease-out',
+              'breathing': 'breathing 4s ease-in-out infinite'
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' }
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' }
+              },
+              scaleIn: {
+                '0%': { transform: 'scale(0.9)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' }
+              },
+              breathing: {
+                '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                '50%': { transform: 'translateY(-8px) scale(1.02)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Noto Sans', sans-serif;
+      }
+      .font-hindi {
+        font-family: 'Noto Sans Devanagari', 'Noto Sans', 'sans-serif';
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "zustand/": "https://esm.sh/zustand@^5.0.11/",
+    "zustand": "https://esm.sh/zustand@^5.0.11",
+    "framer-motion": "https://esm.sh/framer-motion@^11.3.19",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-background-cream">
+    <div id="root"></div>
+  </body>
+</html>
