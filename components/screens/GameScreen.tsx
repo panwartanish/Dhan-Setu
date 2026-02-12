@@ -66,47 +66,75 @@ const GameScreen: React.FC<GameScreenProps> = ({ onExit, onGameComplete }) => {
     let statChanges: Partial<ReturnType<typeof useGameStore.getState>['stats']> = {};
     
     switch(choice.id) {
-        // --- Student ---
+        // --- Student Year 1 ---
         case 'y1_s_choice1': savingsChange = -3000; statChanges = { planningAbility: -10, savingsDiscipline: -15 }; break;
         case 'y1_s_choice2': savingsChange = -500; statChanges = { planningAbility: 10, savingsDiscipline: 10 }; triggerUnlock('SMART_CHOICE'); break;
         case 'y1_s_choice3': statChanges = { savingsDiscipline: 5, planningAbility: -5 }; triggerUnlock('DEBT_AVOIDER'); break;
         case 'y1_s_choice4': savingsChange = -1500; statChanges = { planningAbility: -5 }; break;
         case 'y1_s_choice5': savingsChange = -400; statChanges = { planningAbility: 10, savingsDiscipline: 10 }; triggerUnlock('SMART_CHOICE'); break;
+        case 'y1_s_choice6': debtChange = 30000; statChanges = { debtManagement: -10, savingsDiscipline: -10 }; break;
+        case 'y1_s_choice7': statChanges = { savingsDiscipline: 15 }; triggerUnlock('DEBT_AVOIDER'); break;
         
+        // --- Student Year 2 ---
         case 'y2_s_choice1': savingsChange = 8000; statChanges = { planningAbility: 5, savingsDiscipline: 5 }; break;
         case 'y2_s_choice2': statChanges = { planningAbility: -5 }; break;
-        case 'y2_s_choice3': savingsChange = -3000; statChanges = { savingsDiscipline: -10 }; break;
-        case 'y2_s_choice4': statChanges = { savingsDiscipline: 10 }; triggerUnlock('SMART_CHOICE'); break;
+        case 'y2_s_choice3': savingsChange = -2000; statChanges = { planningAbility: -10 }; break;
+        case 'y2_s_choice4': statChanges = { planningAbility: 10 }; break;
+        case 'y2_s_choice5': statChanges = { debtManagement: 15, planningAbility: 10 }; break;
+        case 'y2_s_choice6': statChanges = { debtManagement: -5, riskAwareness: 5 }; break;
 
+        // --- Student Year 3 ---
         case 'y3_s_choice1': savingsChange = -15000; statChanges = { riskAwareness: 10, planningAbility: 15, savingsDiscipline: 10 }; break;
         case 'y3_s_choice2': savingsChange = -15000; statChanges = { riskAwareness: -15, planningAbility: 5 }; break;
         case 'y3_s_choice3': savingsChange = -15000; statChanges = { riskAwareness: 5, savingsDiscipline: 15 }; break;
+        case 'y3_s_choice4': savingsChange = -5000; statChanges = { riskAwareness: -25 }; break;
+        case 'y3_s_choice5': statChanges = { riskAwareness: 15 }; triggerUnlock('SMART_CHOICE'); break;
         
+        // --- Student Year 4 ---
         case 'y4_s_choice1': debtChange = 50000; statChanges = { debtManagement: -10, planningAbility: 15 }; break;
         case 'y4_s_choice2': statChanges = { debtManagement: 10, riskAwareness: 5 }; triggerUnlock('DEBT_AVOIDER'); break;
+        case 'y4_s_choice3': savingsChange = -1000; statChanges = { riskAwareness: 20, planningAbility: 10 }; break;
+        case 'y4_s_choice4': statChanges = { riskAwareness: -20 }; break;
 
+        // --- Student Year 5 ---
         case 'y5_s_choice1': statChanges = { planningAbility: 20, savingsDiscipline: 10 }; triggerUnlock('SMART_CHOICE'); break;
-        case 'y5_s_choice2': savingsChange = -2000; statChanges = { riskAwareness: 20, planningAbility: 10 }; break;
+        case 'y5_s_choice2': savingsChange = -15000; statChanges = { savingsDiscipline: 20, planningAbility: 15 }; break;
         case 'y5_s_choice3': savingsChange = -10000; statChanges = { savingsDiscipline: -15 }; break;
+        case 'y5_s_choice4': savingsChange = -12000; statChanges = { planningAbility: -5 }; break;
+        case 'y5_s_choice5': savingsChange = -7000; statChanges = { savingsDiscipline: 10 }; break;
 
-        // --- Farmer ---
+        // --- Farmer Year 1 ---
         case 'y1_f_choice1': savingsChange = -15000; statChanges = { riskAwareness: 10, planningAbility: 5 }; break;
         case 'y1_f_choice2': statChanges = { riskAwareness: -5, savingsDiscipline: 5 }; triggerUnlock('SMART_CHOICE'); break;
-        case 'y1_f_choice3': debtChange = 10000; statChanges = { debtManagement: 5, planningAbility: 10 }; break;
-        case 'y1_f_choice4': savingsChange = -2000; statChanges = { planningAbility: -10 }; break;
+        case 'y1_f_choice3': statChanges = { planningAbility: 15 }; break;
+        case 'y1_f_choice4': statChanges = { riskAwareness: -15, planningAbility: -10 }; break;
+        case 'y1_f_choice5': debtChange = 10000; statChanges = { debtManagement: 5, planningAbility: 10 }; break;
+        case 'y1_f_choice6': savingsChange = -2000; statChanges = { planningAbility: -10 }; break;
 
+        // --- Farmer Year 2 ---
         case 'y2_f_choice1': debtChange = 20000; statChanges = { debtManagement: -20, riskAwareness: -10 }; break;
         case 'y2_f_choice2': statChanges = { planningAbility: 15, debtManagement: 10 }; triggerUnlock('DEBT_AVOIDER'); break;
+        case 'y2_f_choice3': savingsChange = 10000; statChanges = { riskAwareness: -10 }; break;
+        case 'y2_f_choice4': savingsChange = 15000; statChanges = { riskAwareness: 10, planningAbility: 5 }; break;
 
+        // --- Farmer Year 3 ---
         case 'y3_f_choice1': savingsChange = -20000; statChanges = { riskAwareness: 15, planningAbility: 10 }; break;
         case 'y3_f_choice2': savingsChange = -50000; statChanges = { riskAwareness: -10, planningAbility: -5 }; break;
         case 'y3_f_choice3': statChanges = { savingsDiscipline: 15 }; break;
+        case 'y3_f_choice4': savingsChange = -30000; statChanges = { planningAbility: 10, savingsDiscipline: -10 }; break;
+        case 'y3_f_choice5': statChanges = { savingsDiscipline: 10, planningAbility: -5 }; break;
 
+        // --- Farmer Year 4 ---
         case 'y4_f_choice1': savingsChange = -1000; statChanges = { riskAwareness: 20, planningAbility: 10 }; triggerUnlock('SMART_CHOICE'); break;
         case 'y4_f_choice2': statChanges = { riskAwareness: -20 }; break;
+        case 'y4_f_choice3': savingsChange = -40000; debtChange = 20000; statChanges = { planningAbility: 15 }; break;
+        case 'y4_f_choice4': statChanges = { planningAbility: -10 }; break;
 
-        case 'y5_s_choice1': savingsChange = -500; statChanges = { planningAbility: 15, riskAwareness: 5 }; break;
-        case 'y5_s_choice2': statChanges = { planningAbility: -10 }; break;
+        // --- Farmer Year 5 ---
+        case 'y5_f_choice1': savingsChange = -500; statChanges = { planningAbility: 15, riskAwareness: 5 }; break;
+        case 'y5_f_choice2': statChanges = { planningAbility: -10 }; break;
+        case 'y5_f_choice3': savingsChange = -10000; statChanges = { savingsDiscipline: 20, planningAbility: 15 }; break;
+        case 'y5_f_choice4': statChanges = { savingsDiscipline: -15 }; break;
     }
     makeDecision(choice.id, { cashBalance: savingsChange, totalDebt: debtChange, statChanges });
     setDialogue(choice.consequence);
