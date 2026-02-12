@@ -94,3 +94,38 @@ npm install
 Run locally:
 
 npm start
+
+---
+
+## 📌 Why Dhan-Setu?
+
+Financial literacy is not just about knowledge — it is about behaviour under pressure.
+
+Dhan-Setu provides a safe environment where users can:
+
+Experience financial consequences
+
+Build resilience
+
+Improve decision-making
+
+Transition from survival to stability
+
+## 📜 License
+
+This project is open-source under the MIT License.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome. You can help by:
+
+Adding new scenarios
+
+Improving UI/UX
+
+Adding regional language support
+
+Optimizing offline performance
+
