@@ -75,28 +75,6 @@ Focus on investment basics, expansion decisions, and financial stability.
 
 ---
 
-## 🚀 Getting Started
-
-Clone the repository:
-
-```bash
-git clone https://github.com/panwartanish/Dhan-Setu.git
-Navigate into the project:
-
-cd Dhan-Setu
-
-
-Install dependencies:
-
-npm install
-
-
-Run locally:
-
-npm start
-
----
-
 ## 📌 Why Dhan-Setu?
 
 Financial literacy is not just about knowledge — it is about behaviour under pressure.
@@ -128,4 +106,26 @@ Improving UI/UX
 Adding regional language support
 
 Optimizing offline performance
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/panwartanish/Dhan-Setu.git
+Navigate into the project:
+
+cd Dhan-Setu
+
+
+Install dependencies:
+
+npm install
+
+
+Run locally:
+
+npm start
 
